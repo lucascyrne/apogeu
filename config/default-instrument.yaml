@@ -1,0 +1,53 @@
+preset: scale_gate
+
+smoothing:
+  alpha: 0.2
+  pitch_alpha: 0.15
+  spatial_alpha: 0.25
+  distance_alpha: 0.22
+  dead_zone: 0
+
+scale:
+  name: pentatonic
+  mode: scale_notes
+  hysteresis: 0.04
+  root: C4
+
+pair:
+  # volume_dist_min: 0.08
+  # volume_dist_max: 0.40
+
+roles:
+  left:
+    pitch_axis: y
+  right:
+    pitch_axis: y
+
+gesture_roles:
+  right:
+    gate_on: [Open_Palm]
+    gate_off: [Closed_Fist]
+    pitch_hand: true
+  left:
+    gate_on: []
+    gate_off: []
+    octave_up: [Thumb_Up]
+    octave_down: [Thumb_Down]
+
+gesture_triggers:
+  Thumb_Up:
+    action: octave_up
+    hand: left
+  Thumb_Down:
+    action: octave_down
+    hand: left
+
+presets:
+  scale_gate:
+    description: Pitch contínuo em semitons; palma=nota, punho=solta
+  theremin:
+    description: Drone continuo estilo theremin
+  pad_expressivo:
+    description: Pad com modulacao suave
+  drum_triggers:
+    description: Apenas gestos discretos

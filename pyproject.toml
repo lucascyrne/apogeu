@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hand-gestures"
+version = "0.1.0"
+description = "MVP de reconhecimento de gestos com as mãos via webcam (MediaPipe)"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "mediapipe>=0.10.14",
+    "opencv-python>=4.8.0",
+    "pydantic>=2.0",
+    "numpy>=1.24.0",
+    "pyyaml>=6.0",
+    "websockets>=12.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+hand-gestures = "src.main:main"
+hand-gestures-cameras = "src.list_cameras:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]

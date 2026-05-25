@@ -1,0 +1,20 @@
+{
+  "name": "@hand-gestures/vision",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@hand-gestures/mapping": "*",
+    "@hand-gestures/protocol": "*",
+    "@mediapipe/tasks-vision": "^0.10.18"
+  },
+  "devDependencies": {
+    "vitest": "^2.1.9"
+  },
+  "scripts": {
+    "test": "vitest run"
+  }
+}

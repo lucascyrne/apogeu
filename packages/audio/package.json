@@ -1,0 +1,14 @@
+{
+  "name": "@hand-gestures/audio",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@hand-gestures/mapping": "*",
+    "@hand-gestures/protocol": "*",
+    "tone": "^15.0.4"
+  }
+}

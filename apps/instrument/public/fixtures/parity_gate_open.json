@@ -1,0 +1,37 @@
+{
+  "schema_version": "2",
+  "type": "control.frame",
+  "timestamp_ms": 1000,
+  "preset": "scale_gate",
+  "scale": "pentatonic",
+  "left": {
+    "presence": true,
+    "x": 0.25,
+    "y": 0.6,
+    "z": 0.5,
+    "pan": 0.0,
+    "pitch_norm": 0.6,
+    "mod": 0.0,
+    "gesture": null,
+    "gate_open": false,
+    "scale_degree": null
+  },
+  "right": {
+    "presence": true,
+    "x": 0.75,
+    "y": 0.5,
+    "z": 0.5,
+    "pan": 0.0,
+    "pitch_norm": 0.5,
+    "mod": 0.0,
+    "gesture": "Open_Palm",
+    "gate_open": false,
+    "scale_degree": 4
+  },
+  "pair": {
+    "hands_distance": 0.6029925372672534,
+    "volume_master": 0.0,
+    "spread": 0.5220153254455275,
+    "volume_active": false
+  }
+}
