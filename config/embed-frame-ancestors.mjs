@@ -2,6 +2,8 @@
 
 export const FRAME_ANCESTOR_SOURCES = [
   "'self'",
+  "https://horizonte.dev.br",
+  "https://www.horizonte.dev.br",
   "https://*.vercel.app",
   "https://*.netlify.app",
   "https://*.pages.dev",

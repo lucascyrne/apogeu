@@ -80,7 +80,9 @@ Ou link direto. Após iniciar, o app envia `postMessage({ type: 'instrument.read
 
 O deploy envia `Content-Security-Policy: frame-ancestors …` via [`vercel.json`](../vercel.json). **Não** uses `https://*` — não é curinga válida em CSP.
 
-Origens já permitidas por defeito: `'self'`, `https://*.vercel.app`, Netlify, Cloudflare Pages, GitHub Pages, `localhost` (3000/5173).
+Origens já permitidas por defeito: `'self'`, [horizonte.dev.br](https://www.horizonte.dev.br), `https://*.vercel.app`, Netlify, Cloudflare Pages, GitHub Pages, `localhost` (3000/5173).
+
+**Importante:** `https://*.vercel.app` só cobre subdomínios Vercel (ex. `foo.vercel.app`), **não** sites em domínio próprio como `https://www.horizonte.dev.br` — esses hosts têm de estar listados **explicitamente**.
 
 **Portfólio noutro domínio** (ex. `https://meu-site.com`):
 
