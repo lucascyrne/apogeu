@@ -8,7 +8,11 @@
   "scripts": {
     "dev": "npm run dev -w @hand-gestures/instrument",
     "build": "npm run build -w @hand-gestures/instrument",
+    "typecheck": "npm run typecheck -w @hand-gestures/instrument",
     "test:web": "npm run test -w @hand-gestures/mapping && npm run test -w @hand-gestures/vision",
     "preview": "npm run preview -w @hand-gestures/instrument"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4"
   }
 }

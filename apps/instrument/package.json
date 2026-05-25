@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npx tsc --noEmit && vite build",
+    "build": "vite build",
+    "typecheck": "node ../../node_modules/typescript/lib/tsc.js --noEmit -p tsconfig.json",
     "preview": "vite preview"
   },
   "dependencies": {

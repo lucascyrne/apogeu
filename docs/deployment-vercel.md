@@ -41,7 +41,15 @@ Se no dashboard a raiz for `apps/instrument` (como no preset Vite), use o [`apps
 
 ### Erro `tsc: Permission denied` (code 126)
 
-Causa típica: install na raiz do monorepo mas build no subpacote, ou binários `.bin` sem bit de execução. O script de build usa `npx tsc` e o install deve correr na **raiz** do monorepo (opção A ou B acima).
+O deploy de produção usa só `vite build` (sem `tsc` no script `build`). Typecheck local/CI: `npm run typecheck`.
+
+Causas comuns na Vercel:
+
+- **Root Directory** = `apps/instrument` sem `cd ../..` no install (só ~100 pacotes no log → workspaces não instalados).
+- `package-lock.json` desatualizado ou não commitado no GitHub — usar `npm ci` na raiz.
+- Binários `.bin` com CRLF (Windows); o repo inclui `.gitattributes` com `eol=lf`.
+
+Confirma no log do install: deve auditar **centenas** de pacotes (MediaPipe, React, etc.), não ~116.
 
 Domínio customizado: HTTPS obrigatório para `getUserMedia`.
 
