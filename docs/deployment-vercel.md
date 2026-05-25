@@ -67,14 +67,32 @@ No site pessoal:
 
 ```html
 <iframe
-  src="https://instrument.seudominio.com/"
-  allow="camera"
+  src="https://apogeu-synth.vercel.app/"
+  allow="camera; microphone"
   style="width:100%;min-height:600px;border:0"
-  title="Hand Gestures Instrument"
+  title="Apogeu Instrument"
 ></iframe>
 ```
 
-Ou link direto. O app envia `postMessage({ type: 'instrument.ready' })` ao pai após iniciar.
+Ou link direto. Após iniciar, o app envia `postMessage({ type: 'instrument.ready', source: 'hand-gestures' })` ao pai (origem do `document.referrer` quando possível).
+
+### CSP `frame-ancestors` (iframe bloqueado / `chrome-error://`)
+
+O deploy envia `Content-Security-Policy: frame-ancestors …` via [`vercel.json`](../vercel.json). **Não** uses `https://*` — não é curinga válida em CSP.
+
+Origens já permitidas por defeito: `'self'`, `https://*.vercel.app`, Netlify, Cloudflare Pages, GitHub Pages, `localhost` (3000/5173).
+
+**Portfólio noutro domínio** (ex. `https://meu-site.com`):
+
+1. Na raiz do repo, corre e commita:
+   ```bash
+   FRAME_ANCESTORS_EXTRA="https://meu-portfolio.vercel.app https://www.meu-site.com" npm run sync:embed-csp
+   ```
+2. Redeploy na Vercel.
+
+**Atalho (qualquer site pode embutir):** variável de ambiente na Vercel `EMBED_FRAME_ANCESTORS_ALL=1`, depois `npm run sync:embed-csp` no build local e commit, ou edita manualmente o header para `frame-ancestors *`.
+
+Configuração partilhada: [`config/embed-frame-ancestors.mjs`](../config/embed-frame-ancestors.mjs).
 
 ## Dev Python (opcional)
 

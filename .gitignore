@@ -1,0 +1,18 @@
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Modelo baixado via script (grande)
+models/*.task
+
+# IDE
+.idea/
+.vscode/
+*.swp
